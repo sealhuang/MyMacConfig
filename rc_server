@@ -1,0 +1,30 @@
+#! /usr/bin/env python
+# vi: set ft=python sts=4 ts=4 sw=4 et:
+
+import os
+import util
+
+root_path = os.path.abspath(util.__file__)
+root_path = root_path.split('/')
+root_path.pop(-1)
+root_path = '/'.join(root_path)
+hoststab_file = os.path.join(root_path, 'etc', 'rc_hosts')
+
+hosts = util.read_hoststab(hoststab_file)
+hosts_num = len(hosts)
+for idx in range(hosts_num):
+    output_str = ' '.join(['[' + str(idx) + ']', hosts[idx][0], hosts[idx][1]])
+    print output_str
+while True:
+    idx = raw_input('Select the server number:')
+    if idx.isdigit() and int(idx)<hosts_num and int(idx)>=0:
+        break
+    else:
+        print 'Invalid input.'
+idx = int(idx)
+
+user = open(os.path.join(root_path, 'etc', 'username.cfg')).readlines()
+user = [line.strip() for line in user]
+
+cmd_str = ' '.join(['ssh', user[0] + '@' + hosts[idx][1]])
+os.system(cmd_str)

@@ -1,0 +1,9 @@
+# remote hosts table
+# format configuration sample following
+# HOST_NAME      IP, IP1, ...
+#
+# Unnecessary line could be commented out using a prefix char `#`
+
+James    172.16.191.83
+Turing   172.16.191.88
+Fodor    172.16.191.91
