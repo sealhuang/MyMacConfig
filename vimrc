@@ -6,6 +6,7 @@ set ruler
 set cursorline
 set hlsearch
 set showcmd
+set clipboard=unnamed
 "set number
 
 autocmd FileType python setlocal et sta sw=4 sts=4
