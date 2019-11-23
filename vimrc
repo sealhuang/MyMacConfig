@@ -15,10 +15,11 @@ autocmd FileType python setlocal foldmethod=indent
 
 nnoremap <silent> <Leader>[ :set nonumber!<CR>:set foldcolumn=0<CR>
 
-" pydiction config
-filetype plugin on
-let g:pydiction_location = '/Users/sealhuang/.vim/bundle/pydiction/complete-dict'
-let g:pydiction_menu_height = 4
+" jedi-vim
+let g:jedi#show_call_signatures = "1"
+autocmd FileType python setlocal completeopt-=preview
+let g:jedi#completions_command = "<C-K>"
+let g:jedi#popup_on_dot = 0
 
 " nerd tree config
 "let g:NERDTreeWinSize = 20
