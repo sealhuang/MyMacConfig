@@ -18,8 +18,11 @@ nnoremap <silent> <Leader>[ :set nonumber!<CR>:set foldcolumn=0<CR>
 " jedi-vim
 let g:jedi#show_call_signatures = "1"
 autocmd FileType python setlocal completeopt-=preview
-let g:jedi#completions_command = "<C-K>"
+"let g:jedi#completions_command = "<C-K>"
 let g:jedi#popup_on_dot = 0
+
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " nerd tree config
 "let g:NERDTreeWinSize = 20
